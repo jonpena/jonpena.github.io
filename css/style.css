@@ -636,6 +636,7 @@ body {
 .project-container .project-item img {
   width: 100%;
   height: auto;
+  object-fit: contain;
   /* border: 1px solid #0f0; */
 }
 
