@@ -1,132 +1,157 @@
+// const scrollreveal = require("./scrollreveal");
 
-let menuToggle = document.querySelector('.toggle');
-let menu = document.querySelector('.menu-container .navbar .menu');
+const menuToggle = document.querySelector('.toggle');
+const menu = document.querySelector('.menu-container .navbar');
 
-let marker = document.querySelector('#marker'); 
-let item = document.querySelectorAll('.navbar .menu a'); 
+const menuItems = document.querySelectorAll('.navbar a');
+const menuContainer = document.querySelector('.menu-container');
 
-let relocate = item[0];
+const spans = document.querySelectorAll('.navbar span');
 
-// EFECTO DE LLUVIA PARA EL HERO
 
-const rain = function() 
+// LINKS OF NAVIGATION MENU
+menuItems.forEach(item => 
 {
-  let amount = 70;
-  let header = document.querySelector("#header");
-
-  if(header.children.length < amount) 
-  {
-    let drop = document.createElement('div')
-    drop.classList.add('drop');
-    let size = Math.random() * 3;
-    let posX = Math.floor(Math.random() * window.innerWidth * 0.95);
-    let delay = Math.random() * -amount;
-    let duratiom = Math.random * 5;
-
-    drop.style.width = size + "px";
-    drop.style.left = posX + "px";
-    drop.style.animationDelay = delay + "s";
-    drop.style.animationDuration = 1 + duratiom + "s";
-    
-    header.appendChild(drop);
-  }
-}
-
-
-const indicator = function(e) 
-{
-  marker.style.top = e.offsetTop + "px";
-  marker.style.left = e.offsetLeft + "px";  
-  marker.style.width = e.offsetWidth + "px";  
-}
-
-
-
-window.onresize = () =>
-{
-  indicator(relocate);
-
-  let header = document.querySelector("#header");
-  let remove = false;
-  
-  do
-  {
-    remove = false;
-
-    for(let i = 0; i < header.children.length; i++)
-    {
-      if(header.children[i].classList[0] === 'drop') 
-      {
-        remove = true;
-        header.removeChild(header.children[i]);
-      }
-    }
-
-  } while(remove == true);
-};
-
-setInterval(rain, 100);
-
-// EFECTO DE MOVIMIENTO EN EL INDICADOR DEL MENU
-
-indicator(item[0]);
-
-item.forEach(link => 
-{
-  link.addEventListener('mousemove', (e) =>
-  {
-    indicator(e.target);
-    relocate = e.target;
-  });
-})
-
-item.forEach(link => 
-{
-  link.addEventListener('click', (e) =>
+  item.addEventListener('click', (e) =>
   { 
     menuToggle.classList.toggle('active');
     menu.classList.toggle('active');
   });
 })
-  
-  
-// HAMBURGUESA DEL MENU
 
+// BUTTON OF BURGER
 menuToggle.addEventListener('click', () =>
 {  
   menuToggle.classList.toggle('active');
   menu.classList.toggle('active');
 });
 
-// Efecto de colores en scroll bar 
-
+// Efecto de colores en scrollBar y Efecto de menu con Scroll
 let progress = document.getElementById('progressbar');
-let totalHeight = document.body.scrollHeight - window.innerHeight;
-
-window.onscroll = () => {
-  let progressHeight = (window.pageYOffset / totalHeight) * 100;
-  progress.style.height = progressHeight + '%';
-}
-
-// efecto de scroll en scroll bar
 
 document.addEventListener('scroll', () => 
+  {
+    let scrollPosition = window.scrollY;
+    let progressHeight = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
+    
+    progress.style.height = progressHeight + '%';
+    
+    if(scrollPosition > 50) 
+    {
+      menuContainer.style.backgroundColor = '#1e1e1e';
+      menuContainer.style.borderBottom = "1px solid var(--blue-1)";
+    } 
+    else 
+    {
+      menuContainer.style.backgroundColor = 'transparent';
+      menuContainer.style.borderBottom = "none";
+    }
+  });
+
+
+// EFECTO DE LLUVIA CON CANVAS
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+let drops = [];
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const Random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+const drawLine = function(ctx, x1, y1, x2, y2, color) {
+  ctx.beginPath();
+	ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.closePath();
+  ctx.strokeStyle = color;
+  ctx.stroke();
+}
+
+class drop {
+  constructor(x, y, c = "#fff") {
+    this.x = x;
+    this.y = y;
+    this.c = c; 
+    this.v = Random(3, 4);
+  }
+}
+
+for(let i = 0; i < 50; i++)
 {
-	let scrollPosition = window.scrollY;
+  const color = i & 2 ? "#00a2f2" : "#e1148b";
+  const initialPosition = Random(-1800, 0);
+  drops.push(new drop(Random(2, canvas.width), initialPosition, color));
+}
 
-  let menuContainer = document.querySelector('.menu-container');
-
-	if(scrollPosition > 50) 
+window.onload = () => 
+{
+  requestAnimationFrame(update);
+  
+  function update(time) 
   {
-		menuContainer.style.backgroundColor = '#1e1e1e';
-    menuContainer.style.borderBottom = "1px solid var(--blue-1)";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	} 
-  else 
-  {
-		menuContainer.style.backgroundColor = 'transparent';
-    menuContainer.style.borderBottom = "none";
-	}
+    for (const drop of drops) {
+    
+      drawLine(ctx, drop.x, drop.y, drop.x, drop.y + 15, drop.c);
+      
+      drop.y += drop.v;
+
+      if(drop.y > canvas.height) {
+        drop.y = 0;
+        drop.v = Random(3, 4);
+      }
+    }
+    requestAnimationFrame(update);
+  }
+};
+
+
+window.addEventListener('scroll', event => 
+{
+  let fromTop = window.scrollY;
+  let offset = 400;
+
+  spans.forEach(item =>  {
+    
+    let tag = document.querySelector(item.dataset.id);
+    
+    if(tag.offsetTop <= fromTop - offset) 
+    {
+      item.classList.add('active');
+    }
+    else 
+    {
+      item.classList.remove('active');
+    }
+  })
 });
 
-// TODO NO ES LISTO
+// EFECTO DE TRANSICIONES con SrollReveal
+window.sr = ScrollReveal();
+
+sr.reveal('.navbar-container', {
+  duration: 1500,
+  origin: 'top',
+  distance: '60px',
+  mobile: false
+});
+
+sr.reveal('.move-right', {
+  duration: 2000,
+  origin: 'right',
+  distance: '-100px'
+});
+
+sr.reveal('.move-left', {
+  duration: 2000,
+  origin: 'right',
+  distance: '100px'
+});
+
+sr.reveal('.move-top', {
+  duration: 2000,
+  origin: 'bottom',
+  distance: '60px'
+});

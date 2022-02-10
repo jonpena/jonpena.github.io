@@ -7,43 +7,38 @@
     
     <title>Jonathan Peña</title>
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/cube.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/cube.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
+    
   </head>
-
-  <body>
-
+  
+  <body id="home">
+    
+    <canvas id="canvas"> </canvas>
+    
     <div id="progressbar"></div>
-    <div id="scrollPath"></div>
     
     <!-- NAVEGATION MENU -->
     <div class="menu-container">
-
+      
       <div class="navbar-container">
-
+        
         <div class="logo-container">
-          <h2>JONATHAN <b>PEÑA</b></h2>
+          <a href="#">JONATHAN<b> PEÑA</b></a>
         </div>
         
         <nav class="navbar">
-          <div class="menu">
-            <div id="marker"></div>
-            <span data-text="HOME"><a href="#">HOME</a></span>
-            <span data-text="PROJECT"><a href="#project">PROJECT</a></span>
-            <span data-text="ABOUT ME"><a href="#about">ABOUT ME</a></span>
-            <span data-text="CONTACT"><a href="#contact">CONTACT</a></span>
-          </div>
+          <span class="active" data-text="HOME" data-id="#home"><a href="#">HOME</a></span>
+          <span data-text="PROJECT" data-id="#project"><a href="#project">PROJECT</a></span>
+          <span data-text="ABOUT ME" data-id="#about"><a href="#about">ABOUT ME</a></span>
+          <span data-text="CONTACT" data-id="#contact"><a href="#contact">CONTACT</a></span>
+          <div class="animation"></div>
         </nav>
         
         <div class="toggle">
@@ -51,7 +46,7 @@
           <span class="bar-2"></span>
           <span class="bar-3"></span>
         </div>
-
+        
       </div>
       
     </div>
@@ -63,7 +58,7 @@
         
         <div class="hero-container">
           
-          <h1 class="sty-paragraph">Hello I'm <b>J</b>onathan <b>P</b>eña</h1>
+          <h1 class="sty-paragraph">Hi I'm <b>J</b>onathan <b>P</b>eña</h1>
           
           <h2>Web Developer</h2>
           
@@ -73,83 +68,82 @@
             <cite class="sty-paragraph" translate="no"> ~ Albert Einstein</cite>
           </blockquote>
           
-          <a class="btn sty-paragraph" href="#" style="--main-clr: #111111; --clr: #00a2f2; --i: 1"><span>ABOUT ME</span></a>
+          <a class="btn sty-paragraph" href="#about" style="--main-clr: #111111; --clr: #00a2f2;"><span>ABOUT ME</span></a>
           
         </div>
         
       </div>
-    
-    </header>
       
+    </header>
+    
     <!-- M A I N -->
     <main id="main">
       
-      <div class="skew-top"></div>
-
       <!-- P R O J E C T  S E C T I O N -->
       <section id="project">
 
-        <div class="project-title">
+        <div class="project-title move-top">
           <h2 class="sty-paragraph">Featured <b>Projects</b></h2>
           <p class="sty-paragraph">These are the last projects I worked on</p>
         </div>
         
         <div class="project-container">
           
-          <div class="project-item">
+          <div class="project-item move-right">
             
-            <img src="assets/site-1.jpg" alt="website-1">
-
+            <img src="assets/site-1.webp" alt="website-1">
+            
             <div class="content-container">
               <p>Project #01</p>
               <h3 translate="no">The vitange</h3>
-              <a class="btn sty-paragraph" href="#" style="--main-clr: #1e1e1e; --clr: #00a2f2; --i: 1"><span>READ MORE</span></a>
+              <a class="btn sty-paragraph" style="--main-clr: #1e1e1e; --clr: #00a2f2;"><span>READ MORE</span></a>
             </div>
             
           </div>
-
-          <div class="project-item">
+          
+          <div class="project-item move-left">
             
-            <img src="assets/site-2.jpg" alt="website-2">
-
+            <img src="assets/site-2.webp" alt="website-2">
+            
             <div class="content-container">
               <p>Project #02</p>
               <h3 translate="no">Mozaik</h3>
-              <a class="btn sty-paragraph" href="#" style="--main-clr: #1e1e1e; --clr: #00a2f2; --i: 1"><span>READ MORE</span></a>
+              <a class="btn sty-paragraph" style="--main-clr: #1e1e1e;--clr:#00a2f2;"><span>READ MORE</span></a>
             </div>
             
           </div>
-
-          <div class="project-item">
+          
+          <div class="project-item move-right">
             
-            <img src="assets/site-3.jpg" alt="website-3">
-
+            <img src="assets/site-3.webp" alt="website-3">
+            
             <div class="content-container">
               <p>Project #03</p>
               <h3 translate="no">Neon Disco</h3>
-              <a class="btn sty-paragraph" href="#" style="--main-clr: #1e1e1e; --clr: #00a2f2; --i: 1"><span>READ MORE</span></a>
+              <a class="btn sty-paragraph" style="--main-clr:#1e1e1e;--clr:#00a2f2;"><span>READ MORE</span></a>
             </div>
             
           </div>
-
+          
           
         </div>
         
       </section>
-
+      
       <!-- SECTION ABOUT -->
       <section id="about">
-
-        <div class="about-title">
-          <h2 class="sty-paragraph">About <b>Me</b></h2>
-          <p class="sty-paragraph">I am a front-end developer who likes to create unique and special applications and websites with really amazing performance. I am a completely self-taught person and I learned to program on my own with free books and videos on the internet.</p>
-        </div>
         
-        <div class="about-container">
-
-          <div class="about-item">
+        <div class="about-title move-top">
+          <h2 class="sty-paragraph">About <b>Me</b></h2>
+          <p class="sty-paragraph">I am a front-end developer who enjoys doing the layout and interactivity of web interfaces, as well as optimization, for the good positioning and loading performance of websites and applications. I am a completely self-taught person and I learned to program on my own through books and videos</p>
+          <h3 class="sty-paragraph"> <b>SKILLS</b</h3>
+          </div>
+          
+          <div class="about-container">
+            
+            <div class="about-item">
             <div class="icon">
-              <img src="assets/icons/html5.png" alt="html5">
+              <img src="assets/icons/html5.webp" alt="html5">
             </div>
             <div class="content-container">
               <h2>HTML5</h2>
@@ -160,7 +154,7 @@
 
           <div class="about-item">
             <div class="icon">
-              <img src="assets/icons/css3.png" alt="css">
+              <img src="assets/icons/css3.webp" alt="css">
             </div>
             <div class="content-container">
               <h2>CSS3</h2>
@@ -168,10 +162,10 @@
               <div class="experience-bar" style="--prc:80%;" data-prc="80%"></div>              
             </div>
           </div>
-
+          
           <div class="about-item">
             <div class="icon">
-              <img src="assets/icons/js.png" alt="js">
+              <img src="assets/icons/js.webp" alt="js">
             </div>
             <div class="content-container">
               <h2>JAVASCRIPT</h2>
@@ -179,10 +173,10 @@
               <div class="experience-bar" style="--prc:60%;" data-prc="60%"></div>
             </div>
           </div>
-
+          
           <div class="about-item">
             <div class="icon">
-              <img src="assets/icons/tailwind.png" alt="tailwind">
+              <img src="assets/icons/tailwind.webp" alt="tailwind">
             </div>
             <div class="content-container">
               <h2>TAILWIND</h2>
@@ -190,10 +184,10 @@
               <div class="experience-bar" style="--prc:30%;" data-prc="30%"></div>
             </div>
           </div>
-
+          
           <div class="about-item">
             <div class="icon">
-              <img src="assets/icons/react.png" alt="react">
+              <img src="assets/icons/react.webp" alt="react">
             </div>
             <div class="content-container">
               <h2>REACT</h2>
@@ -201,7 +195,7 @@
               <div class="experience-bar" style="--prc:60%;" data-prc="60%"></div>
             </div>
           </div>
-
+          
           <div class="about-item">
             <div class="icon">
               <img src="assets/icons/webpack.svg" alt="webpack">
@@ -214,41 +208,41 @@
           </div>
 
         </div>
-
+        
       </section>
-
+      
 
       <!-- CONTACT SECTION -->
       <section id="contact">
-
-        <div class="contact-title">
-          <h2 class="sty-paragraph">Contact <b>Me</b></h2>
+        
+        <div class="contact-title move-top">
+          <h2 class="sty-paragraph">Contact me</h2>
         </div>
-
-        <div class="contact-container">
-
-            <div class="box">
-              <!--  Form -->
-              <div class="contact form">
-
-                <form id="formulario" action="#" autocomplete="off">
-
-                  <div class="form-container">
-
+        
+        <div class="contact-container move-right">
+          
+          <div class="box">
+            <!--  Form -->
+            <div class="contact form">
+              
+              <form id="formulario" action="#" autocomplete="off">
+                
+                <div class="form-container">
+                  
                     <div class="row50">
-
+                      
                       <div class="inputBox">
                         <label for="nombre">Name</label>
-                        <input type="text" id="nombre" name="name" title="Campo obligatorio" placeholder="jonas" required
-                          pattern="[a-zA-ZÀ-ÿ]{4,20}" maxlength="20">
-                        <p>Name must be from 4 to 20 digits and can only contain letters</p>
+                        <input type="text" id="nombre" name="name" title="Campo obligatorio" placeholder="jones" required
+                          pattern="[a-zA-ZÀ-ÿ]{3,20}" maxlength="20">
+                        <p>Name must be from 3 to 20 digits and can only contain letters</p>
                       </div>
 
                       <div class="inputBox">
                         <label for="apellido">Last name (Optional)</label>
-                        <input type="text" id="apellido" name="apellido" placeholder="Rodriguez" pattern="[a-zA-ZÀ-ÿ]{4,20}"
-                          maxlength="20">
-                        <p>Last name must be from 4 to 20 digits and can only contain letters</p>
+                        <input type="text" id="apellido" name="apellido" placeholder="smith" pattern="[a-zA-ZÀ-ÿ]{3,20}"
+                        maxlength="20">
+                        <p>Last name must be from 3 to 20 digits and can only contain letters</p>
                       </div>
 
                     </div>
@@ -258,8 +252,8 @@
                       <div class="inputBox">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" title="Campo obligatorio" placeholder="example@gmail.com"
-                          required pattern="[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+">
-                        <p>Email can only contain letters, numbers, periods, hyphens and underscores</p>
+                        required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <p>Email can only contain letters, numbers, points, hyphens and underscores</p>
                       </div>
 
                       <div class="inputBox">
@@ -270,7 +264,7 @@
                       </div>
 
                     </div>
-
+                    
                     <div class="row100">
                       <div class="inputBox">
                         <label for="message">Message</label>
@@ -288,45 +282,34 @@
 
                 </form>
               </div>
-
+              
             </div>
         </div>
       </section>
-
+      
     </main>
 
     <footer id="footer">
       <div class="footer-container">
-
+      
         <p>Copyright &copy; All rights reserved</p>
-
+        
         <div class="social-container">
             <ion-icon name="logo-facebook"></ion-icon>
             <ion-icon name="logo-youtube"></ion-icon>
             <ion-icon name="logo-linkedin"></ion-icon>
+          </div>
+          
+          <p><img src="assets/icons/heart.svg" alt="heart"> Created by Jonathan Peña</p>
+          
         </div>
-
-        <p> <img src="assets/icons/heart.svg" alt="heart"> Created by Jonathan Peña</p>
-      </div>
     </footer>
+      
+  <script src="js/scrollreveal.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></|script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></|script>  
 
-    <!-- <div class="cube">
-    
-      <div class="top"></div>
-    
-      <div>
-        <span style="--i:0;"></span>
-        <span style="--i:1;"></span>
-        <span style="--i:2;"></span>
-        <span style="--i:3;"></span>
-      </div>
-    
-    </div> -->
+</body>
 
-    <script src="js/main.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
-		<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-
-  </body>
 </html>
