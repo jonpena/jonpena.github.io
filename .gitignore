@@ -1,1 +1,9 @@
+src/
 css/cube.css
+node_modules
+package.json
+package-lock.json
+postcss.config.js
+webpack.config.js
+.babelrc
+.browserslistrc
