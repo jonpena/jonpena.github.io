@@ -7,6 +7,4 @@ webpack.config.js
 .babelrc
 .browserslistrc
 src/
-dist/
-
-!dist/index.html
+/dist
