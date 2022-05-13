@@ -7,3 +7,5 @@ webpack.config.js
 .babelrc
 .browserslistrc
 src/
+dist/
+workbox-config.js
