@@ -10,6 +10,24 @@
     <link rel="apple-touch-icon" href="assets/favicon.png" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
 
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="theme-color" content="#12122a" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-startup-image" href="assets/favicon-512x512.png" />
+
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#00a2f2" />
+    <meta name="application-name" content="Portfolio Jonathan Peña" />
+
     <title>Portfolio Jonathan Peña</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,16 +37,21 @@
       rel="stylesheet"
     />
 
-    <style>
-      .check {
-        font-size: 1rem;
-        width: max-content;
-        position: relative;
-        /* position: absolute; */
-        right: 2rem;
-        background: none;
+    <script type="text/javascript">
+      // Initialize the service worker
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js").then(
+          function (registration) {
+            console.log("registro exitoso");
+            // Registration was successful
+          },
+          function (err) {
+            console.log("registro fallido");
+            // registration failed :(
+          }
+        );
       }
-    </style>
+    </script>
   <link href="style.css" rel="stylesheet"></head>
 
   <body id="home" data-scroll>
@@ -308,7 +331,7 @@
           <ion-icon name="logo-linkedin"></ion-icon>
         </div>
 
-        <p><span>💖</span> Created by Jonathan Peña</p>
+        <p><span>❤️</span> Created by Jonathan Peña</p>
       </div>
     </footer>
 
