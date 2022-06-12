@@ -6,29 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="manifest" href="../manifest.json" />
+    <!-- METAS SEO  -->
+    <meta name="application-name" content="Portafolio Jonathan Peña" />
+    <meta
+      name="description"
+      content="Portafolio | Desarrollador Web Frontend 😊"
+    />
+    <meta
+      name="keywords"
+      content="Portafolio Desarrollador Web Jonathan peña"
+    />
+    <meta name="author" content="Jonathan peña" />
+    <meta name="copyright" content="Web Developer" />
+    <meta name="language" content="es" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jonpena" />
+    <meta property="og:type" content="Website" />
+    <meta
+      name="twitter:title"
+      property="og:title"
+      content="Hola, Soy Jonathan Peña desarrollador web Frontend😄😊"
+    />
 
+    <meta
+      name="twitter:description"
+      content="Portafolio | desarrollador web frontend 😊"
+      property="og:description"
+    />
+
+    <meta content="https://jonpena.github.io/" property="og:url" />
+    <meta content="https://jonpena.github.io/" property="twitter:url" />
+    <link rel="canonical" href="https://jonpena.github.io/" />
+
+    <meta property="og:image" content="../assets/favicon-128x128.png" />
+    <meta name="twitter:image" content="../assets/favicon-128x128.png" />
+
+    <title>Portafolio Jonathan Peña</title>
+
+    <!-- METAS PROGRESSIVE WEB APP -->
     <meta name="theme-color" content="#12122a" />
-
     <meta name="MobileOptimized" content="width" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#12122a" />
+
+    <link rel="manifest" href="../manifest.json" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../assets/favicon-128x128.png" />
+    <link rel="apple-touch-icon" href="../assets/favicon-512x512.png" />
     <link
       rel="apple-touch-startup-image"
       href="../assets/favicon-512x512.png"
     />
-
-    <link rel="apple-touch-icon" href="../assets/favicon.png" />
-    <link rel="apple-touch-icon" href="../assets/favicon-512x512.png" />
-    <meta name="apple-mobile-web-app-status-bar" content="#12122a" />
-    <meta name="application-name" content="Portfolio Jonathan Peña" />
-
-    <title>Portafolio Jonathan Peña</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +66,7 @@
       rel="stylesheet"
     />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-QP1P44M1CV"
@@ -52,8 +81,7 @@
       gtag("config", "G-QP1P44M1CV");
     </script>
 
-    <script type="text/javascript">
-      // Initialize the service worker
+    <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("../sw.js").then(
           function (registration) {
@@ -118,7 +146,7 @@
           <h2 class="hero-h2">Desarrollador Web</h2>
 
           <blockquote class="hero-quote style-p">
-            "La educación es lo que queda después de que olvidamos lo que hemos
+            "La educación es lo que queda después de que uno olvida lo que ha
             aprendido en la escuela"
             <cite class="style-p" translate="no"> ~ Albert Einstein</cite>
           </blockquote>
@@ -231,7 +259,7 @@
       <!-- CONTACT SECTION -->
       <section id="contact" data-scroll="">
         <div class="contact-title move-top">
-          <h2 class="style-p font-purple">Contact me</h2>
+          <h2 class="style-p font-purple">Contactame</h2>
         </div>
 
         <div class="contact-container move-right">
@@ -353,6 +381,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.16/build/js/intlTelInput.min.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -361,7 +390,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.16/build/js/intlTelInput.min.js"></script>
 
     <script defer src="../main.js"></script>
   </body>
