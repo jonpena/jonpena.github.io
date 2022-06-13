@@ -1,9 +1,9 @@
 {
   "name": "Portfolio",
   "short_name": "Jonathan Peña",
-  "description": "this is my Personal Portfolio",
-  "theme_color": "#12122a",
-  "background_color": "#12122a",
+  "description": "This is my Personal Portfolio",
+  "theme_color": "#0a0a26",
+  "background_color": "#0a0a26",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "./",
