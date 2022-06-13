@@ -60,10 +60,10 @@
     <script>
       "serviceWorker" in navigator &&
         navigator.serviceWorker.register("./sw.js").then(
-          function (o) {
+          () => {
             console.log("registro exitoso");
           },
-          function (o) {
+          () => {
             console.log("registro fallido");
           }
         );
